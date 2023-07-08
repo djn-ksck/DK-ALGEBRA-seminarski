@@ -91,7 +91,7 @@ body {
   animation: scroll 12s linear infinite;
 }
 
-.chat-input {
+#formContainer {
   display: flex;
   height: 90px;
   background-color: rgba(199, 247, 68, 1);
@@ -99,7 +99,7 @@ body {
   align-items: flex-start;
 }
 
-.chat-input > input {
+#writeInput {
   font-family: "Cantora One", sans-serif;
   font-size: 1.2rem;
   color: var(--bluePrim);
@@ -115,11 +115,11 @@ body {
   outline: none;
 }
 
-.chat-input > input::placeholder {
+#writeInput::placeholder {
   color: white;
 }
 
-.chat-input > button {
+#submitInput {
   margin: 9px;
   width: 120px;
   height: 30px;
@@ -129,13 +129,14 @@ body {
   font-size: 1.2rem;
   color: white;
   border: none;
+  flex-grow: 0;
 }
 
 @media (max-width: 768px) {
   .chat-input {
     height: 30vh;
-}
-.chat-input > input {
-  height: 80%;
-}
+  }
+  .chat-input > input {
+    height: 80%;
+  }
 }

@@ -70,12 +70,11 @@ export default class App extends React.Component {
     return (
       <div>
         <body>
-        <header>
+          <header>
           <Header />
-        </header>
-        <h1>React aplikacija</h1>
-        <Messages />
-        <ChatInput />
+          </header>
+          <Messages messages={this.state.messages}/>
+          <ChatInput onSendMessage={this.onSendMessage}/>
         </body>
       </div>
     );
