@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .marquee {
@@ -79,11 +80,9 @@ body {
 .messages-container {
   font-family: "Cantora One", sans-serif;
   padding: 20px 0;
-  max-width: 900px;
   width: 100%;
   margin: 0 auto;
   list-style: none;
-  padding-left: 0;
   flex-grow: 1;
   overflow: auto;
   margin-top: 50px;
@@ -146,20 +145,22 @@ body {
 .message-position {
   display: flex;
   margin-top: 10px;
+  align-items: baseline;
+  padding-left: 5%;
 }
 
 .message-position.currentMember {
   /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
+  padding-right: 8%;
 }
 
 .message-position > .avatar {
   height: 35px;
   width: 35px;
-  border-radius: 50%;
   display: inline-block;
-  margin: 0 10px -10px;
+  margin: 0 2px -10px;
 }
 
 .Message-content {
@@ -169,11 +170,11 @@ body {
 
 .Message-content > .username {
   display: block;
-  font-family: "Big Shoulders Display", cursive;
+  font-family: "Cantora One", sans-serif;
   text-transform: uppercase;
   color: var(--bluePrim);
-  font-size: 12px;
-  padding-bottom: 5px;
+  font-size: 10px;
+  padding-bottom: 3px;
 }
 
 .Message-content > .text {
@@ -184,4 +185,15 @@ body {
   display: inline-block;
   border-top: solid;
   border-bottom: solid;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 0.7em;
+  min-height: 50px;
+  margin: 20px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: var(--bluePrim);
+  border-radius: 100px;
 }
