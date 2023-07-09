@@ -3,13 +3,6 @@
 body {
   height: 98vh;
   width: 100vw;
-  background: rgb(199, 247, 68);
-  background: linear-gradient(
-    180deg,
-    rgba(199, 247, 68, 1) 4%,
-    rgba(255, 255, 255, 1) 20%,
-    rgba(255, 255, 255, 1) 100%
-  );
   --bluePrim: #2602f5;
   color: var(--bluePrim);
   font-family: "Big Shoulders Display", cursive;
@@ -85,16 +78,24 @@ body {
 
 .messages-container {
   font-family: "Cantora One", sans-serif;
+  padding: 20px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+  margin-top: 50px;
 }
 
 .marquee__content {
   animation: scroll 12s linear infinite;
 }
 
-#formContainer {
+#form-container {
   display: flex;
   height: 90px;
-  background-color: rgba(199, 247, 68, 1);
   z-index: 0;
   align-items: flex-start;
 }
@@ -116,7 +117,8 @@ body {
 }
 
 #writeInput::placeholder {
-  color: white;
+  color: rgb(185, 185, 185);
+  font-style: italic;
 }
 
 #submitInput {
@@ -139,4 +141,47 @@ body {
   .chat-input > input {
     height: 80%;
   }
+}
+
+.message-position {
+  display: flex;
+  margin-top: 10px;
+}
+
+.message-position.currentMember {
+  /*justify-content: flex-end;*/
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.message-position > .avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px -10px;
+}
+
+.Message-content {
+  display: inline-block;
+  padding: 15px;
+}
+
+.Message-content > .username {
+  display: block;
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  color: var(--bluePrim);
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.Message-content > .text {
+  padding: 10px;
+  max-width: 400px;
+  margin: 10;
+  color: var(--bluePrim);
+  display: inline-block;
+  border-top: solid;
+  border-bottom: solid;
 }

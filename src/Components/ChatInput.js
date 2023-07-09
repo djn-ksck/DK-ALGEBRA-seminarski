@@ -8,25 +8,25 @@ export default function ChatInput({ onSendMessage }) {
   };
 
   const handleSubmit = (e) => {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      onSendMessage(message);
-      setMessage("");
-    }
+    e.preventDefault();
+    if (message.trim().length === 0) return;
+    onSendMessage(message);
+    setMessage("");
   };
 
   return (
     <div className="chat-input">
-      <form id='formContainer' onSubmit={handleSubmit}>
-        <input id="writeInput"
+      <form id="form-container" onSubmit={handleSubmit} autocomplete="off">
+        <input
+          id="writeInput"
           type="text"
           value={message}
           onChange={handleInputChange}
-          //onKeyDown={handleEnter}
           placeholder="Type something..."
           maxLength={999}
         />
-        <input id="submitInput"
+        <input
+          id="submitInput"
           type="submit"
           disabled={message.trim().length === 0}
           value={"S E N D"}
@@ -35,9 +35,3 @@ export default function ChatInput({ onSendMessage }) {
     </div>
   );
 }
-
-/*
-<button onClick={() => { onSendMessage(message); setMessage(''); }}>
-S E N D
-</button>
-*/
