@@ -154,7 +154,6 @@ border-radius: 100px
 }
 
 .message-position.currentMember {
-  /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
   padding-right: 8%;
